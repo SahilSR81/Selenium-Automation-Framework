@@ -7,7 +7,7 @@
 ![TestNG](https://img.shields.io/badge/TestNG-7.9.0-red?style=flat-square)
 ![Maven](https://img.shields.io/badge/Maven-3.9-blue?style=flat-square&logo=apachemaven)
 ![Tests](https://img.shields.io/badge/Tests-21%20Passed-success?style=flat-square)
-[![CI](https://github.com/SahilSR81/Selenium-Java-Automation-Framework/actions/workflows/tests.yml/badge.svg)](https://github.com/SahilSR81/Selenium-Automation-Framework/workflows/ci/badge.svg)
+[![Selenium Tests CI](https://github.com/SahilSR81/Selenium-Automation-Framework/actions/workflows/ci.yml/badge.svg)](https://github.com/SahilSR81/Selenium-Automation-Framework/actions/workflows/ci.yml)
 
 ---
 
