@@ -6,7 +6,7 @@
 ![Selenium](https://img.shields.io/badge/Selenium-4.18.1-brightgreen?style=flat-square&logo=selenium)
 ![TestNG](https://img.shields.io/badge/TestNG-7.9.0-red?style=flat-square)
 ![Maven](https://img.shields.io/badge/Maven-3.9-blue?style=flat-square&logo=apachemaven)
-![Tests](https://img.shields.io/badge/Tests-19%20Passed-success?style=flat-square)
+![Tests](https://img.shields.io/badge/Tests-21%20Passed-success?style=flat-square)
 ![CI](https://github.com/SahilSR81/Selenium-Java-Automation-Framework/actions/workflows/tests.yml/badge.svg)
 
 ---
@@ -25,7 +25,7 @@ Manual testing of e-commerce flows is slow, error-prone, and impossible to scale
 
 ## Impact
 
-- Automated 19+ test cases covering critical e-commerce workflows  
+- Automated 21 test cases covering critical e-commerce workflows  
 - Reduced manual testing effort by ~40% through automation  
 - Improved test reliability using retry logic and smart waits  
 - Enabled parallel execution reducing execution time by ~50%  
@@ -66,12 +66,12 @@ Manual testing of e-commerce flows is slow, error-prone, and impossible to scale
 | Test Class | Test Methods | What It Covers |
 |------------|-------------|----------------|
 | `SignUpTest` | 1 | User registration with form validation |
-| `LoginTest` | 5 + 3 CSV rows | Valid/invalid login, hover, double-click, Excel & CSV data-driven |
+| `LoginTest` | 5 + 4 CSV rows | Valid/invalid login, hover, double-click, Excel & CSV data-driven |
 | `CheckoutTest` | 1 | Complete cart → checkout → order confirmation |
 | `WaitDemoTest` | 3 | Implicit, explicit, and fluent wait strategies |
 | `Selenium4Test` | 4 | Relative locators, new tab/window, browser console logs |
 | `LocatorDemoTest` | 1 | Absolute vs relative XPath comparison |
-| **Total** | **19 tests** | **All PASS** |
+| **Total** | **21 tests** | **All PASS** |
 
 ---
 
