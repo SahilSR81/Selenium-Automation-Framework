@@ -1,0 +1,30 @@
+# Compiled classes
+target/
+target/classes/
+
+# IDE files
+.idea/
+.vs/
+*.iml
+*.ipr
+*.iws
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Selenium WebDriver binaries
+src/test/resources/drivers/

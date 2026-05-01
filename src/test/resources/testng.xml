@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SAF-Suite"
+    verbose="1"
+    parallel="classes"
+    thread-count="2">
+<listeners>
+    <listener class-name="com.saf.listeners.TestListener"/>
+</listeners>
+
+<!-- Default browser parameter for entire suite -->
+<parameter name="browser" value="chrome"/>
+
+<!-- Test for user registration flow -->
+<test name="SignUp-Tests" preserve-order="true">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+        <run>
+            <include name="signup"/>
+            <include name="smoke"/>
+        </run>
+    </groups>
+    <classes>
+        <class name="com.saf.tests.SignUpTest"/>
+    </classes>
+</test>
+
+<!-- Test for user login flow with valid and invalid credentials -->
+<test name="Login-Tests" preserve-order="true">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+        <run>
+            <include name="login"/>
+            <include name="smoke"/>
+            <include name="datadriven"/>
+        </run>
+    </groups>
+    <classes>
+        <class name="com.saf.tests.LoginTest"/>
+    </classes>
+</test>
+
+<!-- Test for end-to-end checkout flow: login, add to cart, checkout with COD, and logout -->
+<test name="Checkout-Tests" preserve-order="true">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+        <class name="com.saf.tests.CheckoutTest"/>
+    </classes>
+</test>
+
+<!-- Test demonstrating different wait strategies: implicit, explicit, and fluent waits -->
+<test name="Wait-Demo-Tests" preserve-order="true">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+        <class name="com.saf.tests.WaitDemoTest"/>
+    </classes>
+</test>
+
+<!-- Test demonstrating Selenium 4 features: relative locators, new tab/window handling, and browser console logs -->
+<test name="Selenium4-Tests" preserve-order="true">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+        <class name="com.saf.tests.Selenium4Test"/>
+    </classes>
+</test>
+
+<!-- Test demonstrating various locator strategies: id, name, class, cssSelector, xpath, linkText, partialLinkText, and tagName -->
+<test name="Locator-Demo-Tests" preserve-order="true">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+        <class name="com.saf.tests.LocatorDemoTest"/>
+    </classes>
+</test>
+</suite>

@@ -1,0 +1,102 @@
+============================================================
+DemoWebShop VERIFIED LOCATOR REFERENCE
+Source: demowebshop.tricentis.com live HTML inspection
+All locators verified from DemoWebShop open-source HTML
+Scraped using playwright codegen
+============================================================
+HEADER / NAV
+Top navigation links
+NAV_REGISTER_LINK       | linkText       | Register
+NAV_LOGIN_LINK          | linkText       | Log in
+NAV_LOGOUT_LINK         | linkText       | Log out
+NAV_MY_ACCOUNT_LINK     | linkText       | My account
+NAV_SHOPPING_CART_LINK  | cssSelector    | .cart-qty
+NAV_SEARCH_INPUT        | id             | small-searchterms
+NAV_SEARCH_BUTTON       | cssSelector    | .search-box-button
+NAV_LOGO                | cssSelector    | .header-logo a
+REGISTER PAGE — /register
+REG_GENDER_MALE         | id             | gender-male
+REG_GENDER_FEMALE       | id             | gender-female
+REG_FIRST_NAME          | id             | FirstName
+REG_LAST_NAME           | id             | LastName
+REG_EMAIL               | id             | Email
+REG_PASSWORD            | id             | Password
+REG_CONFIRM_PASSWORD    | id             | ConfirmPassword
+REG_SUBMIT_BTN          | id             | register-button
+REG_SUCCESS_MSG         | cssSelector    | .result
+REG_ERROR_FIRST_NAME    | id             | FirstName-error
+REG_ERROR_EMAIL         | id             | Email-error
+REG_ERROR_PASSWORD      | id             | Password-error
+LOGIN PAGE — /login
+LOGIN_EMAIL             | id             | Email
+LOGIN_PASSWORD          | id             | Password
+LOGIN_REMEMBER_ME       | id             | RememberMe
+LOGIN_SUBMIT_BTN        | cssSelector    | input.login-button
+LOGIN_ERROR_MSG         | cssSelector    | .message-error.validation-summary-errors
+LOGIN_FORGOT_PWD        | linkText       | Forgot password?
+LOGIN_REGISTER_LINK     | cssSelector    | .register-block .register-button
+MY ACCOUNT PAGE — /customer/info
+ACCOUNT_FIRST_NAME      | id             | FirstName
+ACCOUNT_LAST_NAME       | id             | LastName
+ACCOUNT_EMAIL           | id             | Email
+ACCOUNT_SAVE_BTN        | id             | save-info-button
+HOMEPAGE PRODUCTS
+HOME_FEATURED_PRODUCTS   | cssSelector   | .product-grid
+HOME_PRODUCT_TITLE       | cssSelector   | .product-title a
+HOME_PRODUCT_PRICE       | cssSelector   | .price.actual-price
+HOME_ADD_TO_CART_BTN     | cssSelector   | .button-2.product-box-add-to-cart-button
+HOME_NOTIFICATION_BAR    | id            | bar-notification
+HOME_NOTIFICATION_CLOSE  | cssSelector   | #bar-notification .close
+PRODUCT SEARCH PAGE — /search
+SEARCH_INPUT             | id            | q
+SEARCH_SUBMIT_BTN        | cssSelector   | .search-button
+SEARCH_RESULTS           | cssSelector   | .search-results
+SEARCH_NO_RESULTS        | cssSelector   | .no-result
+PRODUCT DETAIL PAGE — /productname
+PRODUCT_NAME            | cssSelector    | .product-name h1
+PRODUCT_PRICE           | cssSelector    | .product-price span
+PRODUCT_QUANTITY        | id             | product_enteredQuantity_1
+PRODUCT_ADD_TO_CART     | id             | add-to-cart-button-1
+PRODUCT_ADD_SUCCESS_MSG | cssSelector    | .bar-notification .content
+SHOPPING CART — /cart
+CART_TABLE              | cssSelector    | .cart
+CART_PRODUCT_NAME       | cssSelector    | .product .product-name a
+CART_PRODUCT_PRICE      | cssSelector    | .product-unit-price
+CART_PRODUCT_NAME_LINK  | cssSelector   | td.product a.product-name
+CART_PRODUCT_QTY        | cssSelector    | .qty-input
+CART_REMOVE_BTN         | cssSelector    | .remove-btn
+CART_UPDATE_BTN         | id             | updatecart
+CART_TERMS_CHECKBOX     | id             | termsofservice
+CART_CHECKOUT_BTN        | cssSelector   | button#checkout
+CHECKOUT_LOGOUT_LINK     | linkText      | Log out
+CHECKOUT — /onepagecheckout
+CHECKOUT_FIRST_NAME     | id             | BillingNewAddress_FirstName
+CHECKOUT_LAST_NAME      | id             | BillingNewAddress_LastName
+CHECKOUT_EMAIL          | id             | BillingNewAddress_Email
+CHECKOUT_COUNTRY        | id             | BillingNewAddress_CountryId
+CHECKOUT_STATE          | id             | BillingNewAddress_StateProvinceId
+CHECKOUT_CITY           | id             | BillingNewAddress_City
+CHECKOUT_ADDRESS1       | id             | BillingNewAddress_Address1
+CHECKOUT_ZIP            | id             | BillingNewAddress_ZipPostalCode
+CHECKOUT_PHONE          | id             | BillingNewAddress_PhoneNumber
+CHECKOUT_BILLING_NEXT   | cssSelector    | #billing-buttons-container .button-1
+CHECKOUT_SHIPPING_NEXT  | cssSelector    | #shipping-buttons-container .button-1
+CHECKOUT_SHIPPING_METHOD_NEXT | cssSelector | #shipping-method-buttons-container .button-1
+CHECKOUT_PAYMENT_METHOD_NEXT  | cssSelector | #payment-method-buttons-container .button-1
+CHECKOUT_PAYMENT_INFO_NEXT    | cssSelector | #payment-info-buttons-container .button-1
+CHECKOUT_CONFIRM_BTN    | cssSelector    | #confirm-order-buttons-container .button-1
+CHECKOUT_SUCCESS_TITLE  | cssSelector    | .title strong
+CHECKOUT_ORDER_NUMBER   | cssSelector    | .order-number strong
+============================================================
+XPATH REFERENCE (absolute vs relative examples for report)
+============================================================
+ABSOLUTE XPATH (fragile — avoid in production):
+/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/form/div[1]/button
+
+RELATIVE XPATH (preferred — used in all tests):
+//button[@id='register-button']
+//input[@id='Email']
+//a[contains(text(),'Log in')]
+//div[@class='message-error']//li
+//button[contains(@class,'login-button')]
+============================================================
