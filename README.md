@@ -121,6 +121,26 @@ Selenium_Automation_Framework/
 - Java 11 JDK — set `JAVA_HOME` in environment variables
 - Maven — added to system `PATH`
 
+### Configuration Setup
+
+The framework uses `config.properties` for test configuration:
+
+**Current Configuration:**
+```properties
+BASE_URL=https://demowebshop.tricentis.com          # Base URL of the application under test
+BROWSER=chrome                                      # Browser to run tests on (chrome, firefox, edge)
+VALID_EMAIL=your_email@example.com                  # Valid email for login
+VALID_PASSWORD=your_password                        # Valid password for login
+INVALID_EMAIL=wrong_user_xyz@fake.com               # Invalid email for login
+INVALID_PASSWORD=wrongpass000                       # Invalid password for login
+```
+
+**For Local Testing:**
+- Update `VALID_EMAIL` and `VALID_PASSWORD` with your credentials
+- CI/CD automatically uses the existing configuration
+
+**Note:** A `config.properties.example` template is available for reference
+
 ### Run Commands
 
 ```bash

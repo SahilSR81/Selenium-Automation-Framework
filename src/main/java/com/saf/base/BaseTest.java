@@ -47,10 +47,14 @@ public void setUp(@Optional("chrome") String browserParam,
 
     // Different browser setups
     switch (browserName) {
-        //Firefox brrowser setup
+        //Firefox browser setup
         case "firefox":
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions ffOpts = new FirefoxOptions();
+            // Headless mode for CI environments
+            if (System.getProperty("ci") != null || System.getenv("CI") != null) {
+                ffOpts.addArguments("--headless");
+            }
             ffOpts.addArguments("--start-maximized");
             webDriver = new FirefoxDriver(ffOpts);
             System.out.println("[BaseTest] Firefox launched");
@@ -58,33 +62,15 @@ public void setUp(@Optional("chrome") String browserParam,
         
         // Edge browser setup
         case "edge":
-            // using local msedgedriver because azureedge.net is blocked on this network
+            WebDriverManager.edgedriver().setup();
             EdgeOptions edgeOpts = new EdgeOptions();
+            // Headless mode for CI environments
+            if (System.getProperty("ci") != null || System.getenv("CI") != null) {
+                edgeOpts.addArguments("--headless=new");
+            }
             edgeOpts.addArguments("--start-maximized");
             edgeOpts.addArguments("--disable-notifications");
             edgeOpts.addArguments("--disable-blink-features=AutomationControlled");
-
-            // resolve driver path relative to project root — works on any machine
-            String driverPath = System.getProperty("user.dir")
-                + "/src/test/resources/drivers/msedgedriver.exe";
-            java.io.File driverFile = new java.io.File(driverPath);
-
-            if (driverFile.exists()) {
-                // found in local driver — set it directly, skip network lookup
-                System.setProperty("webdriver.edge.driver", driverPath);
-                System.out.println("[BaseTest] edge driver loaded from project: " + driverPath);
-            } else {
-                // local driver missing — log clear instructions
-                System.out.println("[BaseTest] msedgedriver.exe not found at: " + driverPath);
-                System.out.println("[BaseTest] download from: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/");
-                System.out.println("[BaseTest] place it at: src/test/resources/drivers/msedgedriver.exe");
-                throw new RuntimeException(
-                    "msedgedriver.exe not found. Download Edge 145 driver from " +
-                    "https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/ " +
-                    "and place at: src/test/resources/drivers/msedgedriver.exe"
-                );
-            }
-
             webDriver = new EdgeDriver(edgeOpts);
             System.out.println("[BaseTest] edge launched successfully");
             break;
@@ -92,6 +78,10 @@ public void setUp(@Optional("chrome") String browserParam,
         default: // chrome
             WebDriverManager.chromedriver().setup();
             ChromeOptions chromeOpts = new ChromeOptions();
+            // Headless mode for CI environments
+            if (System.getProperty("ci") != null || System.getenv("CI") != null) {
+                chromeOpts.addArguments("--headless=new");
+            }
             chromeOpts.addArguments("--start-maximized");
             chromeOpts.addArguments("--disable-notifications");
             chromeOpts.addArguments("--disable-blink-features=AutomationControlled");
