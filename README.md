@@ -70,7 +70,7 @@ Manual testing of e-commerce flows is slow, error-prone, and impossible to scale
 | `CheckoutTest` | 1 | Complete cart → checkout → order confirmation |
 | `WaitDemoTest` | 3 | Implicit, explicit, and fluent wait strategies |
 | `Selenium4Test` | 4 | Relative locators, new tab/window, browser console logs |
-| `LocatorDemoTest` | 1 | Absolute vs relative XPath comparison |
+| `LocatorDemoTest` | 3 | Absolute vs relative XPath, CSS selector, ID, name, linkText, partialLinkText, tagName |
 | **Total** | **21 tests** | **All PASS** |
 
 ---
